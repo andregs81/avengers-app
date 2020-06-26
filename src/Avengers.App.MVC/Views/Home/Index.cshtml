@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Person>
+@{
+    ViewData["Title"] = "Avangers Person Page";
+}
+<div class="row">
+    @foreach (var p in Model)
+    {
+        <div class="col-md-4 mt-3">
+            <div class="card">
+                <div class="card-header">
+                    <img src="~/images/@p.GetIcon()" class="card-img-top" alt="@p.Icon" />
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@p.PersonName </h5>
+                    <p class="card-text"><b>Identity:</b> @p.SecretIdentity</p>
+                    <p class="card-text"><b>Year:</b> @p.YearOfCreation</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
